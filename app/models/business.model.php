@@ -5,7 +5,7 @@ class businessModel {
     private $db;
 
     public function __construct() {
-        $this->db = new PDO('mysql:host=localhost;'.'dbname=business2;charset=utf8', 'root', '');
+        $this->db = new PDO('mysql:host=localhost;'.'dbname=business;charset=utf8', 'root', '');
     }
 
     
@@ -22,7 +22,7 @@ class businessModel {
     //busca los datos en base al id pasado en el boton seleccionado 
 
     function showById($id) {
-        $query = $this->db->prepare("SELECT * FROM  clothes JOIN brand ON clothes.id_clothes = brand.id_brand  WHERE id_clothes= ? " );
+        $query = $this->db->prepare("SELECT * FROM  clothes JOIN brand ON clothes.id_clothes = brand.id_brand  WHERE id= ? " );
         $query->execute([$id]);
         $itemsId = $query->fetchAll(PDO::FETCH_OBJ); // devuelve un arreglo de objetos
          

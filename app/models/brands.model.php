@@ -5,7 +5,7 @@ class brandsModel {
     private $db;
 
     public function __construct() {
-        $this->db = new PDO('mysql:host=localhost;'.'dbname=business2;charset=utf8', 'root', '');
+        $this->db = new PDO('mysql:host=localhost;'.'dbname=business;charset=utf8', 'root', '');
     }
 
     //muestra la lista de categorias traidas desde la tabla brand

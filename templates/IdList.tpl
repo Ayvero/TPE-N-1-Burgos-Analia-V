@@ -3,24 +3,41 @@
 
 <h2> Detalle de productos por id </h2>
 
+<div class="container">
 
- <div class="container">
-    
- <ul class="list-group">
+<table class="table">
+<tr class ="table-info"> 
+<td class= "table-info"> Id del producto </td>
+<td class= "table-info">  producto </td>
+<td class= "table-info"> talle </td>
+<td class= "table-info"> color </td>
+<td class= "table-info"> precio </td>
+<td class= "table-info"> Id de la marca </td>
+<td class= "table-info"> marca </td>
+<td class= "table-info"> imagen</td>
+</tr>
 
-       {foreach from=$items item=$cloth3 }
-            
-
-        <li class='list-group-item d-flex justify-content-between align-items-center'>
-        <span> <b> Marca (Categoria):{$cloth3->brand}</b> </span>
-        <span> <b> Articulo:{$cloth3->description}</b> </span>
-        <span> <b> Talle: {$cloth3->size}</b> </span>
-        <span> <b> Color: {$cloth3->colour}</b> </span>
-        <span> <b> Precio: {$cloth3->price}</b></span>
-</li>
+<tr class ="table-info">
+       {foreach  from=$items item=$cloth3 }
+   
+           <td class= "table-info"> <b>  {$cloth3->id}</b></td> 
+           <td class= "table-info"> <b>  {$cloth3->description}</b></td>
+           <td class= "table-info"> <b>  {$cloth3->size}</b></td>
+           <td class= "table-info"> <b>  {$cloth3->colour}</b></td>
+           <td class= "table-info"> <b>  {$cloth3->price}</b></td>
+           <td class= "table-info"> <b> {$cloth3->id_brand}</b></td>
+           <td class= "table-info"> <b>  {$cloth3->brand}</b></td>
+          
+          <div class ="row">
+           <div class="col-3">
+           <td class= "table-info"> <b><img src= "{$cloth3->image}" width=" 350 px "> </b></td>
+           </div>
+</tr>
+           
 {/foreach}
-
-</ul>
+</table>
 </div>
+
+
 
 {include file="footer.tpl"}
