@@ -8,6 +8,7 @@ class UserModel {
         $this->db = new PDO('mysql:host=localhost;'.'dbname=business;charset=utf8', 'root', '');
     }
 
+      //busca en la base de datos si existe el usuario     
     function validateUser($email, $password){
 
         $query = $this->db->prepare('SELECT * FROM user WHERE email = ?');

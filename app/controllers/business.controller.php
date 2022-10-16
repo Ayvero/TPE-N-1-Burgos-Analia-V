@@ -15,9 +15,6 @@ class businessController
 
   public function __construct() {
 
-    // barrera para usuario logueado
-   
-    
     $this->model = new businessModel();
     $this->view = new businessView();
     $this->helper= new AuthHelper();

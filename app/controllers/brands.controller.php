@@ -10,7 +10,7 @@ class brandsController {
     private $view;
     private $helper;
     
-
+      //armo el contructor del controlador
     public function __construct() {
         $this->model = new brandsModel();
         $this->view = new brandsView();

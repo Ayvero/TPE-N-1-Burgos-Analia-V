@@ -1,6 +1,4 @@
 <?php
-//require_once './app/models/user.model.php';
-//require_once './app/views/login.view.php';
 require_once './app/controllers/login.controller.php';
 
 
@@ -8,32 +6,31 @@ require_once './app/controllers/login.controller.php';
 
 
 class AuthHelper{
-  //private $model;
- // private $view;
-
+ 
 
   public function __construct() {
     
      
-    //$this->model = new userModel();
-    //$this->view = new loginView();
-  }
-
-
+    }
+   
+     
+   //controla si la sesion esta abierta 
   public function openSession(){
-    session_start();
-            if(!isset ($_SESSION [ 'IS_LOGGED'])){
-             header("Location: " .BASE_URL.'login');
-             die();
+    session_start();  //abre sesion
+            if(!isset ($_SESSION [ 'IS_LOGGED'])){ //si  no hay un usuario logueado 
+             header("Location: " .BASE_URL.'login'); // lo manda al form de loguin
+             die(); //corta toda actividad
    
             }
     
   }
 
+     
+   //cierra la sesion
   function logout(){
     session_start();
     session_destroy();
-    header("Location: ". BASE_URL);
+    header("Location: ". BASE_URL); //envia al home
 
     }
 
